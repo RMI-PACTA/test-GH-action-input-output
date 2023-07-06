@@ -35,7 +35,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          #cp workflow.transition.monitor/Dockerfile Dockerfile
+          cp workflow.transition.monitor/Dockerfile Dockerfile
           #docker build . --file Dockerfile --tag ${{ inputs.image-name }}
 
       - name: Log in to registry
