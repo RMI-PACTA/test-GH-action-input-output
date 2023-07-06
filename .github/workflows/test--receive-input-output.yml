@@ -8,7 +8,7 @@ on:
         required: true
         type: string
     outputs:
-      test:
+      full-image-name:
         description: "test output"
         value: ${{ jobs.docker-build.outputs.full-image-name }}
 jobs:
