@@ -8,9 +8,6 @@ on:
         required: true
         type: string
     outputs:
-      full-image-name:
-        description: "Full pushed image name including host/registry, name, and tag"
-        value: ${{ jobs.docker-build.outputs.full-image-name }}
       test:
         description: "test output"
         value: ${{ jobs.docker-build.outputs.test }}
@@ -22,7 +19,6 @@ jobs:
       contents: read
     timeout-minutes: 25
     outputs:
-      full-image-name: ${{ steps.push-image.outputs.full-image-name }}
       test: ${{ steps.push-image.outputs.test }}
 
     steps:
@@ -52,5 +48,4 @@ jobs:
           full_image_name=$(echo $full_image_name | tr '[A-Z]' '[a-z]')
           #docker tag ${{ inputs.image-name }} $full_image_name
           #docker push $full_image_name
-          echo "full-image-name=$full_image_name"
           echo "test=$full_image_name" >> $GITHUB_OUTPUT
