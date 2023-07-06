@@ -53,4 +53,4 @@ jobs:
           #docker tag ${{ inputs.image-name }} $full_image_name
           #docker push $full_image_name
           echo "full-image-name=$full_image_name"
-          echo "test=TEST" >> $GITHUB_OUTPUT
+          echo "test=$full_image_name" >> $GITHUB_OUTPUT
