@@ -18,7 +18,7 @@ jobs:
     steps:
       - name: Report
         run: |
-          echo "test: ${{ needs.build_docker_image.outputs.test }}"
+          echo "test: ${{ needs.build_docker_image.outputs.full-image-name }}"
 
       - name: Find Comment
         if: ${{ github.event_name == 'pull_request' }}
