@@ -18,7 +18,6 @@ jobs:
     steps:
       - name: Report
         run: |
-          echo "full-image-name: ${{ needs.build_docker_image.outputs.full-image-name }}"
           echo "test: ${{ needs.build_docker_image.outputs.test }}"
 
       - name: Find Comment
