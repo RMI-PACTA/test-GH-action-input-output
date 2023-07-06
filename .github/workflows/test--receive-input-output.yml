@@ -22,7 +22,7 @@ jobs:
       contents: read
     timeout-minutes: 25
     outputs:
-      full-image-name: ${{ steps.build-and-push-image.outputs.full-image-name }}
+      full-image-name: ${{ steps.push-image.outputs.full-image-name }}
       test: ${{ steps.push-image.outputs.test }}
 
     steps:
