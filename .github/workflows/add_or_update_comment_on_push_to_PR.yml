@@ -11,7 +11,7 @@ jobs:
         id: fc
         with:
           issue-number: ${{ github.event.pull_request.number }}
-          comment-author: 'github-actions[bot]'
+          comment-author: 'PACTA-bot'
           body-includes: Docker image from this PR
 
       - name: Create or update comment
