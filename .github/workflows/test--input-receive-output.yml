@@ -21,7 +21,7 @@ jobs:
           echo "test: ${{ needs.build_docker_image.outputs.full-image-name }}"
 
       - name: Find Comment
-        if: ${{ github.event_name == 'pull_request' }}
+        # if: ${{ github.event_name == 'pull_request' }}
         uses: peter-evans/find-comment@v2
         id: fc
         with:
@@ -31,7 +31,7 @@ jobs:
           body-includes: Docker image from this PR created
 
       - name: Create or update comment
-        if: ${{ github.event_name == 'pull_request' }}
+        # if: ${{ github.event_name == 'pull_request' }}
         uses: peter-evans/create-or-update-comment@v3
         with:
           token: ${{ secrets.PAT_ADD_ISSUES_TO_PROJECT }}
@@ -45,6 +45,6 @@ jobs:
             github.sha = ${{ github.sha }}
             github.ref = ${{ github.ref }}
             github.ref.name = ${{ github.ref.name }}
-            github.ref = ${{ github.ref }}
             github.ref.type = ${{ github.type }}
+            github.event_name = ${{ github.event_name }}
           edit-mode: replace
