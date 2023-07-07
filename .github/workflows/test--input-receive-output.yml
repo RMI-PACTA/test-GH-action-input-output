@@ -31,7 +31,6 @@ jobs:
           body-includes: Docker image from this PR created
 
       - name: Create or update comment
-        if: ${{ github.event_name == 'pull_request' }}
         uses: peter-evans/create-or-update-comment@v3
         with:
           token: ${{ secrets.PAT_ADD_ISSUES_TO_PROJECT }}
