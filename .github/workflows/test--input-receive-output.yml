@@ -43,7 +43,6 @@ jobs:
             docker pull ${{ needs.build_docker_image.outputs.full-image-name }}
             ```
             github.sha = ${{ github.sha }}
-            github.sha:0:7 = ${{ github.sha:0:7 }}
             github.ref = ${{ github.ref }}
             github.ref.name = ${{ github.ref.name }}
             github.ref = ${{ github.ref }}
