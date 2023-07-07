@@ -23,6 +23,6 @@ jobs:
           body: |
             Docker image from this PR (${{ github.event.pull_request.head.sha }}) created
             ```
-            docker pull XXX
+            docker pull XXX-XXX
             ```
           edit-mode: replace
