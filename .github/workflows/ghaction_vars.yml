@@ -12,7 +12,9 @@ jobs:
         run: |
           echo "github.sha = ${{ github.sha }}"
           echo "github.event.after = ${{ github.event.after }}"
+          echo "github.event.pull_request = ${{ github.event.pull_request }}"
           echo "github.event.pull_request.head = ${{ github.event.pull_request.head }}"
+          echo "github.event.pull_request.head.repo = ${{ github.event.pull_request.head.repo }}"
 
       - name: Dump GitHub context
         env:
