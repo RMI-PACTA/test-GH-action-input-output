@@ -1,6 +1,7 @@
 on:
   push:
     branch: [main]
+  pull_request:
   workflow_dispatch:
 
 jobs:
