@@ -19,6 +19,11 @@ jobs:
       - name: Report
         run: |
           echo "test: ${{ needs.build_docker_image.outputs.full-image-name }}"
+          echo "github.sha = ${{ github.sha }}"
+          echo "github.ref = ${{ github.ref }}"
+          echo "github.ref.name = ${{ github.ref.name }}"
+          echo "github.ref.type = ${{ github.type }}"
+          echo "github.event_name = ${{ github.event_name }}"
 
       #- name: Find Comment
       #  # if: ${{ github.event_name == 'pull_request' }}
