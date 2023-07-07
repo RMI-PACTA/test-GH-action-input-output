@@ -15,6 +15,7 @@ jobs:
           echo "github.event.pull_request = ${{ github.event.pull_request }}"
           echo "github.event.pull_request.head = ${{ github.event.pull_request.head }}"
           echo "github.event.pull_request.head.repo = ${{ github.event.pull_request.head.repo }}"
+          echo "github.event.pull_request.head.sha = ${{ github.event.pull_request.head.sha }}"
 
       - name: Dump GitHub context
         env:
