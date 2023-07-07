@@ -8,6 +8,9 @@ jobs:
   report:
     runs-on: ubuntu-latest
     steps:
+      - name: echo manually
+        run: echo "github.sha = ${{ github.sha }}"
+
       - name: Contexts
         run: |
           echo "https://docs.github.com/en/actions/learn-github-actions/contexts"
