@@ -1,0 +1,28 @@
+on:
+  pull_request:
+
+jobs:
+  add_comment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Find Comment
+        uses: peter-evans/find-comment@v2
+        id: fc
+        with:
+          token: ${{ secrets.PAT_ADD_ISSUES_TO_PROJECT }}
+          issue-number: ${{ github.event.pull_request.number }}
+          comment-author: 'github-actions[bot]'
+          body-includes: Docker image from this PR
+
+      - name: Create or update comment
+        uses: peter-evans/create-or-update-comment@v3
+        with:
+          token: ${{ secrets.PAT_ADD_ISSUES_TO_PROJECT }}
+          comment-id: ${{ steps.fc.outputs.comment-id }}
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            Docker image from this PR (${{ github.event.pull_request.head.sha }}) created
+            ```
+            docker pull XXX
+            ```
+          edit-mode: replace
