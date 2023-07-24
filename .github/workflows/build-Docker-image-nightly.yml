@@ -8,5 +8,5 @@ jobs:
     uses: ./.github/workflows/build-and-push-Docker-image.yml
     secrets: inherit
     with:
-      image-name: workflow.transition.monitor
+      image-name: test-gh-action-input-output
       image-tag: nightly
